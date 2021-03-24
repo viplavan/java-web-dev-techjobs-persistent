@@ -57,7 +57,6 @@ public class JobData {
 
         return theValue;
     }
-
     /**
      * Search all Job fields for the given term.
      *
