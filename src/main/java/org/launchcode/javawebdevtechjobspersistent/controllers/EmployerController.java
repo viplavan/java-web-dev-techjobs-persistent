@@ -1,5 +1,4 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
-
 import org.launchcode.javawebdevtechjobspersistent.models.Employer;
 import org.launchcode.javawebdevtechjobspersistent.models.data.EmployerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public class EmployerController {
     @GetMapping
     public String displayAllEmployers(Model model){
         model.addAttribute("title", "All Employer");
-        model.addAttribute("employer", employerRepository.findAll());
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
 
@@ -37,7 +36,7 @@ public class EmployerController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Employer");
-            model.addAttribute("employer", employerRepository.findAll());
+            model.addAttribute("employers", employerRepository.findAll());
             return "employers/add";
         }
         employerRepository.save(newEmployer);
